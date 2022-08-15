@@ -19,7 +19,7 @@ variable "ikswsname" {
 resource helm_release teaiksfrtfcb {
   name       = "teaiksapp"
   namespace = "default"
-  chart = "https://prathjan.github.io/helm-chart/jaegertea-1.0.0.tgz"
+  chart = "https://prathjan.github.io/helm-chart/jaegertea-1.0.1.tgz"
 
   set {
     name  = "MESSAGE"
