@@ -25,6 +25,9 @@ variable "org" {
 variable "ikswsname" {
   type = string
 }
+variable "globalwsname" {
+  type = string
+}
 
 resource helm_release teaiksfrtfcb {
   name       = "teaiksapp"
