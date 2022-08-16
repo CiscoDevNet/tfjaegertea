@@ -19,7 +19,7 @@ variable "ikswsname" {
 resource helm_release teaiksfrtfcb {
   name       = "teaiksapp"
   namespace = "default"
-  chart = ${local.instrapp}
+  chart = local.instrapp
   #chart = "https://prathjan.github.io/helm-chart/newapp-1.0.0.tgz"
 
   set {
