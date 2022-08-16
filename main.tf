@@ -19,7 +19,8 @@ variable "ikswsname" {
 resource helm_release teaiksfrtfcb {
   name       = "teaiksapp"
   namespace = "default"
-  chart = "https://prathjan.github.io/helm-chart/newapp-1.0.0.tgz"
+  chart = ${local.instrapp}
+  #chart = "https://prathjan.github.io/helm-chart/newapp-1.0.0.tgz"
 
   set {
     name  = "MESSAGE"
@@ -38,5 +39,6 @@ provider "helm" {
 
 locals {
   kube_config = yamldecode(data.terraform_remote_state.iksws.outputs.kube_config)
+  instrapp = data.terraform_remote_state.global.outputs.instrapp
 }
 
