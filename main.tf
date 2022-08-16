@@ -9,6 +9,16 @@ data "terraform_remote_state" "iksws" {
   }
 }
 
+data "terraform_remote_state" "global" {
+  backend = "remote"
+  config = {
+    organization = var.org
+    workspaces = {
+      name = var.globalwsname
+    }
+  }
+}
+
 variable "org" {
   type = string
 }
